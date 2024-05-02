@@ -93,28 +93,51 @@ a:hover {
     url("../images/bg-img.png") center/cover no-repeat; /* Add your image path here */
   border: 1px solid #2a3942;
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: 0 auto;
 }
 .hero-intro .card-body {
   padding: 0;
+  flex: 1; /* Allow the card-body to grow and fill the available space */
+  overflow: hidden; /* Hide any overflow content */
 }
 .hero-intro h6 {
   color: var(--text-color);
   letter-spacing: 1px;
   font-family: var(--header-font);
   font-size: 2.2vh;
+  padding: 3%;
+  background: #202c33;
+  border-bottom: 1px solid #f6f6f353;
 }
 .hero-intro #user-avatar {
   width: 50px;
 }
-
 hr {
   color: var(--text-color);
-  opacity: 0.45;
+  opacity: 0.22;
 }
 #line {
   background: var(--text-color) !important;
-  margin-bottom: 6%;
-  margin-top: -1%;
+  margin-bottom: -1%;
+  margin-top: -3%;
+  z-index: -1;
+}
+
+/* messages */
+#messages {
+  padding: 3%;
+  max-height: 500px;
+  overflow-y: auto;
+  z-index: -1;
+}
+.hero-intro p {
+  color: var(--text-color);
+  letter-spacing: 1px;
+  font-family: var(--text-font);
+  font-size: 2vh;
 }
 
 /* form chat-field */
@@ -123,7 +146,7 @@ hr {
   padding: 2%;
 }
 .hero-intro form .row {
-  margin-top: 4%;
+  margin-top: 1%;
   margin-bottom: 0%;
 }
 .hero-intro input {
@@ -131,12 +154,25 @@ hr {
   margin-left: -12%;
   background: #2a3942;
   border: none;
-  padding: 7px 70px;
+  padding: 7px 20px;
+  margin-bottom: -5%;
+  font-size: 1.9vh;
+}
+.hero-intro input:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+  color: var(--text-color);
+  background: #2a3942;
+}
+.hero-intro form input::placeholder {
+  color: #f6f6f6c2;
+  font-size: 1.9vh;
 }
 #chat-icon {
   width: 22px;
   vertical-align: middle;
   margin-top: 14%;
+  cursor: pointer;
 }
 .mic-img {
   margin-left: 40%;
@@ -173,22 +209,51 @@ hr {
     margin: 3%;
   }
   .hero-intro .card {
-    width: 60%;
-    margin-top: 2%;
+    margin-top: -1%;
+    max-width: 60%;
   }
   .hero-intro h6 {
     letter-spacing: 1px;
     font-size: 2.2vh;
+    padding: 1%;
   }
   .hero-intro #user-avatar {
     width: 40px;
   }
   hr {
-    opacity: 0.45;
+    opacity: 0.22;
   }
   #line {
     margin-bottom: 6%;
-    margin-top: 1%;
+    margin-top: -2%;
+  }
+
+  /* messages */
+  #messages {
+    padding: 2%;
+    max-height: 500px;
+  }
+
+  /* form chat-field */
+  .hero-intro form {
+    padding: 2%;
+  }
+  .hero-intro form .row {
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
+  .hero-intro input {
+    width: 100%;
+    margin-left: 0%;
+    padding: 7px 20px;
+    margin-bottom: -5%;
+  }
+  #chat-icon {
+    width: 20px;
+    margin-top: 14%;
+  }
+  .mic-img {
+    margin-left: 42%;
   }
 }
 
