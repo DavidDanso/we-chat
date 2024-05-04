@@ -21,6 +21,14 @@
     <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static '/css/chat.css' %}" />
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+
     <script>
       document.documentElement.className = "js";
       var supportsCssVars = function () {
@@ -79,13 +87,23 @@
 
                   <div id="messages">
                     <ul id="chat_messages">
+                      {% for message in chat_messages reversed %}
+                      <!--  -->
                       {% include 'a_rtchat/chat_messages.html' %}
+                      <!--  -->
+                      {% endfor %}
                     </ul>
                     <!-- end ul -->
                   </div>
                   <!-- end messages -->
 
-                  <form method="POST">
+                  <form
+                    id="chat_message_form"
+                    hx-post="{% url 'chat' %}"
+                    hx-target="#chat_messages"
+                    hx-swap="beforeend"
+                    _="on htmx:afterRequest reset() me"
+                  >
                     {% csrf_token %}
                     <div class="row">
                       <div class="col-2 col-md-1">
@@ -98,14 +116,7 @@
                       </div>
                       <!-- end col -->
                       <div class="col-8 col-md-10">
-                        <div class="mb-3">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="exampleMessageField"
-                            placeholder="🙂 Type a message"
-                          />
-                        </div>
+                        <div class="mb-3">{{form}}</div>
                         <!-- end chat field -->
                       </div>
                       <!-- end col -->
@@ -146,5 +157,12 @@
     <!-- Custom Links -->
     <script src="{% static '/js/jquery-min.js' %}"></script>
     <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script>
+      function scrollToBottom() {
+        const container = document.getElementById("messages");
+        container.scrollTop = container.scrollHeight;
+      }
+      scrollToBottom();
+    </script>
   </body>
 </html>

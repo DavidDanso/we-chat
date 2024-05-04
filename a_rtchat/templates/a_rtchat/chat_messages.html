@@ -1,7 +1,8 @@
 <!--  -->
+{% if message.author == request.user.profile %}
 <li id="chat_bubble">
   <div class="chat-span">
-    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>{{message.body}}</span>
   </div>
   <!-- end chat span -->
   <div id="svg_box">
@@ -15,7 +16,7 @@
   <!-- end chat_bubble -->
 </li>
 <!-- end chat_bubble | loginUser -->
-
+{% else %}
 <li id="guestUser">
   <div class="flex justify-start" id="guest_div">
     <div class="flex items-end" id="sub_div">
@@ -37,7 +38,7 @@
     </div>
     <!-- end items-end | svg -->
     <div id="guestMsg">
-      <span>Lorem ipsum dolor sit amet.</span>
+      <span>{{message.body}}</span>
     </div>
     <!-- end guestMsg -->
   </div>
@@ -49,3 +50,5 @@
   <!-- end guest_info -->
 </li>
 <!-- end guestUser -->
+{% endif %}
+<!--  -->

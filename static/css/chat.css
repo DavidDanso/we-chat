@@ -221,7 +221,7 @@ hr {
   margin-top: 1%;
   margin-bottom: 0%;
 }
-.hero-intro input {
+.hero-intro .input {
   width: 68vw;
   margin-left: -12%;
   background: #2a3942;
@@ -229,16 +229,20 @@ hr {
   padding: 7px 20px;
   margin-bottom: -5%;
   font-size: 1.9vh;
+  color: var(--text-color);
 }
-.hero-intro input:focus {
+.hero-intro .input:focus {
   box-shadow: none !important;
   outline: 0px !important;
   color: var(--text-color);
   background: #2a3942;
 }
-.hero-intro form input::placeholder {
+.hero-intro form .input::placeholder {
   color: #f6f6f6c2;
   font-size: 1.9vh;
+}
+.hero-intro form label {
+  display: none;
 }
 #chat-icon {
   width: 22px;
@@ -363,7 +367,7 @@ hr {
     margin-top: 1px;
     margin-bottom: 5px;
   }
-  .hero-intro input {
+  .hero-intro .input {
     width: 100%;
     margin-left: -1%;
     padding: 7px 20px;
