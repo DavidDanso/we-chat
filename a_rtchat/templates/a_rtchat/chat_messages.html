@@ -20,7 +20,7 @@
 <li id="guestUser">
   <div class="flex justify-start" id="guest_div">
     <div class="flex items-end" id="sub_div">
-      <a href="">
+      <a href="{% url 'info' message.author.id %}">
         <img
           class="img-fluid rounded-circle"
           src="https://pbs.twimg.com/profile_images/508601156767997952/fFTdKUf2_400x400.jpeg"
@@ -44,8 +44,8 @@
   </div>
   <!-- end guest_div -->
   <div id="guest_info">
-    <span id="guestName">Bart</span>
-    <span id="guestUsername">@bart</span>
+    <span id="guestName">{{message.author.name}}</span>
+    <span id="guestUsername">@{{message.author.username}}</span>
   </div>
   <!-- end guest_info -->
 </li>

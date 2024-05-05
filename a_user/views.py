@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
@@ -7,13 +7,10 @@ from .forms import *
 from .models import *
 
 ########################################## home page views
-def homePage(request):
-    context = {}
-    return render(request, 'a_user/index.html', context)
-
-################################ welcome_email view
-def welcomeEmail(request):
-    return render(request, 'welcome_email.html')
+def userInfo(request, pk):
+    user = get_object_or_404(Profile, pk=pk)
+    context = {'user': user}
+    return render(request, 'a_user/user_info.html', context)
 
 
 ########################################## profile page views

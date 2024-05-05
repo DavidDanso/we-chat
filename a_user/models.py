@@ -6,6 +6,7 @@ import uuid
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=255, unique=True)
+    bio = models.TextField(null=True, blank=True) 
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, unique=True)
     updated_time_stamp = models.DateTimeField(auto_now=True)
