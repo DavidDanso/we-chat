@@ -74,7 +74,7 @@
                   <h6>
                     <a href="{% url 'profile' %}">
                       <img
-                        src="{% static 'images/profile.svg' %}"
+                        src="{{user.imageURL}}"
                         class="img-fluid rounded-circle"
                         id="user-avatar"
                         alt="user-avatar"

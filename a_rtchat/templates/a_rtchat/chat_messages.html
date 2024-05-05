@@ -23,7 +23,7 @@
       <a href="{% url 'info' message.author.id %}">
         <img
           class="img-fluid rounded-circle"
-          src="https://pbs.twimg.com/profile_images/508601156767997952/fFTdKUf2_400x400.jpeg"
+          src="{{message.author.imageURL}}"
         />
       </a>
     </div>
