@@ -323,6 +323,28 @@ a:hover {
   transition: all 0.5s ease-in-out;
 }
 
+/* profile image card */
+#invoice--img-card {
+  border: 1px solid #f6f6f669;
+}
+#invoice--img-default {
+  width: 20%;
+  object-fit: cover;
+}
+#invoice--img-card a,
+#invoice--img-card br,
+#user_avatar-clear_id {
+  display: none;
+}
+label[for="user_avatar-clear_id"],
+label[for="user_avatar-clear_id"] + br,
+label[for="user_avatar-clear_id"] + br + span,
+label[for="user_avatar-clear_id"] + br + span + span {
+  display: none;
+}
+#id_user_avatar {
+  margin-top: -4%;
+}
 /****************************************** Footer-Section ************************************/
 footer {
   margin-top: 2%;
@@ -382,7 +404,7 @@ footer p {
 
   /****** hero-Section ******/
   #hero {
-    margin-top: 8%;
+    margin-top: 3%;
   }
   .hero-intro {
     margin: 3%;
@@ -506,6 +528,15 @@ footer p {
     letter-spacing: 1px;
     font-size: 2vh;
     margin-left: 10px;
+  }
+
+  /* profile image card */
+  #invoice--img-default {
+    width: 8%;
+    object-fit: cover;
+  }
+  #id_user_avatar {
+    margin-top: -2%;
   }
 }
 

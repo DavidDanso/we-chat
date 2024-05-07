@@ -17,25 +17,26 @@ def userInfo(request, pk):
 @login_required(login_url='login')
 def profilePage(request):
     # user profile
-    profile = Profile.objects.get(user=request.user)
-
+    profile = get_object_or_404(Profile, name=request.user.profile)
 
     # user profile form INSTANCE
     form = UserProfileForm(instance=profile)
 
     if request.method == 'POST':
         # user profile form
-        form = UserProfileForm(request.POST, instance=profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request,  'Profile updated Successful✅')
+            return redirect('chat')
+
     
         elif 'delete_account' in request.POST:
                 profile.delete()
                 messages.success(request, 'Account delete Successful')
                 return redirect('signup')
 
-    context = {'form': form}
+    context = {'form': form, 'profile': profile}
     return render(request, 'a_user/profile.html', context)
 
 

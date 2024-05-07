@@ -23,5 +23,5 @@ class Profile(models.Model):
         try:
             url = self.user_avatar.url
         except:
-            url = ''
+            url = '/images/default-avatar.png'
         return url
