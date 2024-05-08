@@ -113,7 +113,9 @@ a:hover {
   border-bottom: 1px solid #f6f6f353;
 }
 .hero-intro #user-avatar {
-  width: 50px;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
 }
 hr {
   color: var(--text-color);
@@ -294,7 +296,8 @@ hr {
     padding: 1%;
   }
   .hero-intro #user-avatar {
-    width: 40px;
+    width: 35px;
+    height: 35px;
   }
   hr {
     opacity: 0.22;

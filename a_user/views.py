@@ -28,8 +28,6 @@ def profilePage(request):
         if form.is_valid():
             form.save()
             messages.success(request,  'Profile updated Successful✅')
-            return redirect('chat')
-
     
         elif 'delete_account' in request.POST:
                 profile.delete()
