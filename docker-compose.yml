@@ -1,0 +1,10 @@
+name: we-chat-application
+
+services:
+  app:
+    image: we-chat-image
+    container_name: we-chat-container
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/app
