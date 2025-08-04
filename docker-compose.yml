@@ -10,3 +10,8 @@ services:
       - POSTGRES_PASSWORD=wechatpassword
     ports:
       - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgres/data
+volumes:
+  postgres_data:

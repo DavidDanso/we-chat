@@ -11,6 +11,7 @@ WORKDIR /app
 # Copy the requirements.txt file into the container
 COPY requirements.txt /app/
 
+
 # Upgrade pip version
 RUN pip install --upgrade pip
 
