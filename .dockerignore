@@ -1,4 +1,73 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+README.txt
+*.md
+
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache
+
+# Virtual environments
 .env
-venv/
-Dockerfile
+.venv
+env
+venv
+ENV
+
+# IDE/Editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
 .DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Test files
+tests/
+test/
+*test.py
+*test.js
+*.test.js
+spec/
+
+# Coverage
+coverage/
+.coverage
+.nyc_output
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Temporary files
+*.tmp
+*.temp
+
+# AWS files
+.aws/
+
+# Docker files (avoid nested Docker builds)
+Dockerfile*
+docker-compose*
